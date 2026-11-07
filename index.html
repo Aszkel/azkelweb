@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171714">
+  <meta name="description" content="Diseño de páginas web profesionales y adaptadas a celular para tu negocio. Paquetes desde $500 MXN.">
+  <title>AzKel Web | Diseño web exclusivo para tu negocio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #24231f;
+      --muted: #77736a;
+      --navy: #171714;
+      --orange: #b79a5b;
+      --orange-dark: #927541;
+      --cream: #f7f5f0;
+      --white: #fff;
+      --line: #e8e4da;
+      --green: #927541;
+      --shadow: 0 18px 50px rgba(36, 35, 31, .09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, .preview-content h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    .topbar { background: var(--navy); color: #dce3ee; font-size: .82rem; }
+    .topbar-inner { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; }
+    .topbar strong { color: #fff; font-weight: 600; }
+    header { background: rgba(255,255,255,.94); border-bottom: 1px solid rgba(20,32,51,.07); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 850; letter-spacing: -.05em; font-size: 1.3rem; }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; color: var(--navy); background: var(--orange); font-size: .95rem; letter-spacing: -.04em; }
+    .brand span:last-child span { color: var(--orange-dark); }
+    .nav-links { display: flex; align-items: center; gap: 29px; }
+    .nav-links a { text-decoration: none; color: #465166; font-size: .92rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--orange-dark); }
+    .nav-cta, .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      border: 0; border-radius: 9px; padding: 12px 18px; text-decoration: none;
+      font: inherit; font-size: .93rem; font-weight: 750; transition: transform .2s, background .2s, box-shadow .2s;
+    }
+    .nav-cta, .button-primary { background: var(--orange); color: var(--navy); box-shadow: 0 8px 18px rgba(183,154,91,.2); }
+    .nav-cta:hover, .button-primary:hover { background: var(--orange-dark); transform: translateY(-2px); }
+    .button-light { color: var(--ink); background: #fff; border: 1px solid var(--line); }
+    .button-light:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    .hero { overflow: hidden; position: relative; color: #fff; background: var(--navy); }
+    .hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
+    .hero::before { width: 520px; height: 520px; top: -300px; right: -120px; border: 1px solid rgba(255,255,255,.1); box-shadow: 0 0 0 55px rgba(255,255,255,.025), 0 0 0 110px rgba(255,255,255,.02); }
+    .hero::after { width: 360px; height: 360px; bottom: -270px; left: 30%; background: rgba(183,154,91,.12); filter: blur(40px); }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 64px; padding: 88px 0 96px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #d7c18e; text-transform: uppercase; letter-spacing: .13em; font-size: .75rem; font-weight: 800; }
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--orange); }
+    h1 { max-width: 650px; margin: 18px 0 19px; font-size: clamp(2.7rem, 5vw, 4.7rem); line-height: 1.04; letter-spacing: -.055em; }
+    h1 span { color: #d2b979; }
+    .hero-copy { max-width: 520px; margin: 0; color: #c4ccda; font-size: 1.1rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .hero-note { display: flex; align-items: center; gap: 9px; margin-top: 23px; color: #b7c1d0; font-size: .87rem; }
+    .hero-note svg { flex: 0 0 auto; color: #d2b979; }
+    .preview-area { position: relative; min-height: 370px; display: grid; place-items: center; }
+    .preview-glow { position: absolute; width: 78%; height: 70%; border-radius: 50%; background: rgba(183,154,91,.18); filter: blur(65px); }
+    .browser { position: relative; width: 100%; max-width: 450px; padding: 12px; border: 1px solid rgba(255,255,255,.16); border-radius: 17px; background: rgba(255,255,255,.1); box-shadow: 0 32px 80px rgba(0,0,0,.25); transform: rotate(2deg); }
+    .browser-bar { height: 25px; display: flex; align-items: flex-start; gap: 5px; padding: 3px 4px; }
+    .browser-bar i { width: 7px; height: 7px; display: block; border-radius: 50%; background: #d5c596; }
+    .browser-bar i:nth-child(2) { background: #b79a5b; }
+    .browser-bar i:nth-child(3) { background: #a7a08e; }
+    .site-preview { min-height: 290px; overflow: hidden; padding: 25px; border-radius: 10px; color: var(--ink); background: #fffdf9; }
+    .preview-nav { display: flex; align-items: center; justify-content: space-between; padding-bottom: 23px; border-bottom: 1px solid #eee8df; font-size: .67rem; font-weight: 800; }
+    .preview-logo { display: flex; align-items: center; gap: 7px; }
+    .preview-logo b { width: 21px; height: 21px; display: grid; place-items: center; border-radius: 6px; background: var(--orange); color: var(--navy); font-size: .58rem; }
+    .preview-menu { color: #9298a2; font-weight: 600; }
+    .preview-content { padding: 28px 4px 0; }
+    .preview-tag { color: var(--orange-dark); text-transform: uppercase; letter-spacing: .14em; font-size: .57rem; font-weight: 800; }
+    .preview-content h2 { max-width: 230px; margin: 7px 0; font-size: 1.65rem; line-height: 1.12; letter-spacing: -.04em; }
+    .preview-content p { max-width: 210px; margin: 0; color: #778092; font-size: .7rem; }
+    .preview-action { display: inline-block; margin-top: 17px; padding: 8px 11px; border-radius: 6px; color: #fff; background: var(--orange); font-size: .6rem; font-weight: 750; }
+    .preview-dots { display: flex; gap: 5px; margin-top: 17px; }
+    .preview-dots i { width: 17px; height: 4px; border-radius: 5px; background: #e4dcc8; }
+    .preview-dots i:first-child { width: 30px; background: var(--orange); }
+    .floating-card { position: absolute; right: -8px; bottom: 20px; display: flex; align-items: center; gap: 11px; padding: 14px 17px; border: 1px solid rgba(20,32,51,.07); border-radius: 12px; color: var(--ink); background: #fff; box-shadow: var(--shadow); transform: rotate(-2deg); }
+    .floating-icon { width: 35px; height: 35px; display: grid; place-items: center; border-radius: 10px; color: var(--green); background: #f1ecdf; font-weight: 900; }
+    .floating-card b, .floating-card small { display: block; }
+    .floating-card b { font-size: .81rem; }
+    .floating-card small { color: var(--muted); font-size: .69rem; }
+
+    .benefits { background: #fff; border-bottom: 1px solid var(--line); }
+    .benefit-row { display: grid; grid-template-columns: repeat(3, 1fr); padding: 22px 0; }
+    .benefit { display: flex; align-items: center; justify-content: center; gap: 11px; padding: 5px 16px; color: #39465a; font-size: .88rem; font-weight: 700; }
+    .benefit + .benefit { border-left: 1px solid var(--line); }
+    .benefit-icon { color: var(--orange-dark); font-size: 1.1rem; }
+    section { scroll-margin-top: 24px; }
+    .section { padding: 88px 0; }
+    .section-head { max-width: 650px; margin: 0 auto 42px; text-align: center; }
+    .section-head .eyebrow { color: var(--orange-dark); }
+    .section-head h2, .about-copy h2 { margin: 12px 0 11px; font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.13; letter-spacing: -.045em; }
+    .section-head p, .about-copy > p { margin: 0; color: var(--muted); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .service-card { min-height: 205px; padding: 25px; border: 1px solid var(--line); border-radius: 13px; background: #fff; transition: transform .2s, box-shadow .2s; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .service-icon { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 12px; color: var(--orange-dark); background: #f1ecdf; font-size: 1.2rem; }
+    .service-card h3 { margin: 17px 0 6px; font-size: 1.08rem; }
+    .service-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    .pricing { background: #fff; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); align-items: stretch; gap: 18px; }
+    .price-card { position: relative; display: flex; flex-direction: column; padding: 27px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .price-card.featured { border: 2px solid var(--orange); box-shadow: 0 16px 40px rgba(183,154,91,.13); }
+    .popular { position: absolute; top: -13px; right: 20px; padding: 5px 11px; border-radius: 20px; color: var(--navy); background: var(--orange); font-size: .68rem; font-weight: 800; }
+    .plan-name { margin: 0; font-size: 1.14rem; }
+    .plan-summary { min-height: 45px; margin: 6px 0 14px; color: var(--muted); font-size: .88rem; }
+    .price { margin: 0; font-size: 2.25rem; font-weight: 850; letter-spacing: -.05em; }
+    .price small { color: var(--muted); font-size: .78rem; font-weight: 600; letter-spacing: 0; }
+    .price-card ul { display: grid; gap: 11px; margin: 20px 0 23px; padding: 19px 0 0; border-top: 1px solid var(--line); list-style: none; color: #4e5a6d; font-size: .88rem; }
+    .price-card li { display: flex; gap: 9px; }
+    .price-card li::before { content: "✓"; color: var(--green); font-weight: 900; }
+    .price-card .button { width: 100%; margin-top: auto; }
+    .pricing-note { margin: 22px 0 0; color: var(--muted); text-align: center; font-size: .82rem; }
+
+    .about { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 75px; }
+    .about-art { position: relative; min-height: 345px; overflow: hidden; display: grid; place-items: center; border-radius: 18px; background: #eae5d9; }
+    .about-art::before, .about-art::after { content: ""; position: absolute; border-radius: 50%; }
+    .about-art::before { width: 230px; height: 230px; top: -75px; right: -44px; background: #cabb94; opacity: .7; }
+    .about-art::after { width: 300px; height: 300px; bottom: -170px; left: -100px; background: #d6ccb4; opacity: .65; }
+    .about-card { position: relative; z-index: 1; width: min(76%, 300px); padding: 24px; border: 1px solid rgba(20,32,51,.07); border-radius: 14px; background: rgba(255,255,255,.94); box-shadow: var(--shadow); transform: rotate(-3deg); }
+    .about-card-mark { width: 45px; height: 45px; display: grid; place-items: center; margin-bottom: 21px; border-radius: 13px; color: #fff; background: var(--orange); font-weight: 900; }
+    .about-card h3 { margin: 0 0 6px; font-size: 1.18rem; }
+    .about-card p { margin: 0; color: var(--muted); font-size: .86rem; }
+    .about-copy .eyebrow { color: var(--orange-dark); }
+    .about-copy h2 { max-width: 480px; }
+    .about-points { display: grid; gap: 14px; margin-top: 25px; }
+    .about-point { display: flex; align-items: flex-start; gap: 12px; color: #465166; font-size: .92rem; }
+    .about-point span { flex: 0 0 auto; display: grid; place-items: center; width: 23px; height: 23px; border-radius: 50%; color: var(--green); background: #f1ecdf; font-size: .75rem; font-weight: 900; }
+
+    .contact { padding: 0 0 88px; }
+    .contact-box { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 43px 48px; border-radius: 17px; color: #fff; background: var(--navy); }
+    .contact-box::after { content: ""; position: absolute; width: 300px; height: 300px; top: -205px; right: 17%; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; box-shadow: 0 0 0 35px rgba(255,255,255,.025), 0 0 0 70px rgba(255,255,255,.02); }
+    .contact-copy { position: relative; z-index: 1; max-width: 590px; }
+    .contact-copy .eyebrow { color: #d7c18e; }
+    .contact-copy h2 { margin: 10px 0 5px; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.15; letter-spacing: -.04em; }
+    .contact-copy p { margin: 0; color: #c4ccda; font-size: .92rem; }
+    .contact-box .button { position: relative; z-index: 1; flex: 0 0 auto; white-space: nowrap; }
+    footer { padding: 27px 0; border-top: 1px solid var(--line); background: #fff; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; color: var(--muted); font-size: .82rem; }
+    .footer-brand { color: var(--ink); font-size: .95rem; font-weight: 800; }
+    .footer-brand span { color: var(--orange-dark); }
+    .footer-inner p { margin: 0; }
+    :focus-visible { outline: 3px solid #d2b979; outline-offset: 3px; }
+
+    @media (max-width: 800px) {
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 25px; padding: 70px 0 78px; }
+      .preview-area { min-height: 310px; }
+      .site-preview { min-height: 260px; padding: 19px; }
+      .preview-content { padding-top: 23px; }
+      .nav-links { gap: 17px; }
+      .about { gap: 38px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 36px, 480px); }
+      .topbar-inner { justify-content: center; text-align: center; }
+      .topbar-inner span:last-child { display: none; }
+      .nav { min-height: 66px; }
+      .nav-links { display: none; }
+      .nav-cta { padding: 10px 13px; font-size: .82rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 18px; padding: 63px 0 59px; }
+      h1 { font-size: clamp(2.65rem, 12vw, 3.8rem); }
+      .hero-copy { font-size: 1rem; }
+      .preview-area { min-height: 295px; margin: 4px 8px 0; }
+      .browser { max-width: 390px; }
+      .floating-card { right: -8px; bottom: 2px; }
+      .benefit-row { grid-template-columns: 1fr; padding: 10px 0; }
+      .benefit { justify-content: flex-start; padding: 10px 5px; }
+      .benefit + .benefit { border-top: 1px solid var(--line); border-left: 0; }
+      .section { padding: 65px 0; }
+      .section-head { margin-bottom: 29px; }
+      .service-grid, .pricing-grid { grid-template-columns: 1fr; gap: 14px; }
+      .service-card { min-height: auto; }
+      .price-card { padding: 24px; }
+      .about { grid-template-columns: 1fr; gap: 30px; }
+      .about-art { min-height: 275px; }
+      .contact { padding-bottom: 62px; }
+      .contact-box { align-items: flex-start; flex-direction: column; padding: 31px 25px; gap: 22px; }
+      .contact-box .button { width: 100%; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <span>Estudio digital independiente</span>
+      <span>Atención personalizada · Precios claros</span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="wrap nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="AzKel Web, inicio">
+        <span class="brand-mark">AK</span>
+        <span>AzKel <span>Web</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="#nosotros">Nosotros</a>
+      </div>
+      <a class="nav-cta" href="https://wa.me/529581871404?text=Hola%20AzKel%20Web%2C%20quiero%20informes%20sobre%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer">Hablemos <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Tu negocio, listo para crecer</span>
+          <h1>Tu página web.<br><span>Tu mejor escaparate.</span></h1>
+          <p class="hero-copy">Creamos páginas web claras y atractivas para que más personas conozcan tu negocio y sepan cómo encontrarte.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://wa.me/529581871404?text=Hola%20AzKel%20Web%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer">Cotiza por WhatsApp <span aria-hidden="true">↗</span></a>
+            <a class="button button-light" href="#paquetes">Ver paquetes</a>
+          </div>
+          <div class="hero-note">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Desde $1,000 MXN · Diseñada para celular y escritorio
+          </div>
+        </div>
+        <div class="preview-area" aria-label="Ejemplo de diseño de una página web">
+          <div class="preview-glow"></div>
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i></div>
+            <div class="site-preview">
+              <div class="preview-nav">
+                <div class="preview-logo"><b>AK</b> TU NEGOCIO</div>
+                <span class="preview-menu">INICIO &nbsp;&nbsp; SERVICIOS &nbsp;&nbsp; CONTACTO</span>
+              </div>
+              <div class="preview-content">
+                <span class="preview-tag">Hecho para ti</span>
+                <h2>Una gran idea merece ser vista.</h2>
+                <p>Presenta tus productos y conecta con nuevos clientes.</p>
+                <span class="preview-action">Conoce más &nbsp; →</span>
+                <div class="preview-dots"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card">
+            <span class="floating-icon" aria-hidden="true">✓</span>
+            <span><b>Lista para celular</b><small>Se ve bien en cualquier pantalla</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="benefits" aria-label="Ventajas">
+      <div class="wrap benefit-row">
+        <div class="benefit"><span class="benefit-icon" aria-hidden="true">✦</span> Diseño profesional</div>
+        <div class="benefit"><span class="benefit-icon" aria-hidden="true">▣</span> Fácil de ver en celular</div>
+        <div class="benefit"><span class="benefit-icon" aria-hidden="true">✧</span> Atención personalizada</div>
+      </div>
+    </div>
+
+    <section class="section" id="servicios">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Lo que hacemos</span>
+          <h2>Una solución web para cada negocio</h2>
+          <p>Lo importante, bien presentado y al alcance de tus clientes.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">⌂</span>
+            <h3>Páginas para negocios</h3>
+            <p>Presenta tus servicios, horarios y datos de contacto en un solo lugar.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">▤</span>
+            <h3>Menús con código QR</h3>
+            <p>Comparte tu menú digital de forma práctica para tu restaurante o cafetería.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">↗</span>
+            <h3>Ventas y contacto directo</h3>
+            <p>Facilita que tus clientes te escriban y conozcan lo que ofreces.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="paquetes">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Paquetes</span>
+          <h2>Empieza con lo que necesitas</h2>
+          <p>Opciones sencillas para darle presencia digital a tu negocio.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3 class="plan-name">Básica</h3>
+            <p class="plan-summary">Para empezar a mostrar tu negocio en internet.</p>
+            <p class="price">$1,000 <small>MXN</small></p>
+            <ul>
+              <li>Una página para tu negocio</li>
+              <li>Información y datos de contacto</li>
+              <li>Acceso directo a WhatsApp</li>
+              <li>Diseño adaptable a celular</li>
+            </ul>
+          </article>
+          <article class="price-card featured">
+            <span class="popular">La más pedida</span>
+            <h3 class="plan-name">Negocio</h3>
+            <p class="plan-summary">Más información para que tus clientes te encuentren.</p>
+            <p class="price">$1,500 <small>MXN</small></p>
+            <ul>
+              <li>Todo lo incluido en Básica</li>
+              <li>Menú y galería de fotos</li>
+              <li>Ubicación y Google Maps</li>
+              <li>Acceso directo a WhatsApp</li>
+            </ul>
+          </article>
+          <article class="price-card">
+            <h3 class="plan-name">Pro</h3>
+            <p class="plan-summary">Una presencia más completa para tu marca.</p>
+            <p class="price">$2,500 <small>MXN</small></p>
+            <ul>
+              <li>Todo lo incluido en Negocio</li>
+              <li>Diseño de logo</li>
+              <li>Dominio</li>
+              <li>Diseño adaptable a celular</li>
+            </ul>
+          </article>
+
+    </div>
+    </section>
+
+    <section class="section" id="nosotros">
+      <div class="wrap about">
+        <div class="about-art" aria-hidden="true">
+          <div class="about-card">
+            <div class="about-card-mark">AK</div>
+            <h3>AzKel Web</h3>
+            <p>Ideas locales, presencia digital para crecer.</p>
+          </div>
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">Cerca de ti</span>
+          <h2>Tu negocio es único. Tu página también.</h2>
+          <p>En AzKel Web ayudamos a negocios locales a dar el siguiente paso con una página propia, clara y fácil de usar.</p>
+          <div class="about-points">
+            <div class="about-point"><span>✓</span> Trato directo y atención personalizada.</div>
+            <div class="about-point"><span>✓</span> Diseños pensados primero para celular.</div>
+            <div class="about-point"><span>✓</span> Diseños adaptados a la identidad de tu marca.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="wrap contact-box">
+        <div class="contact-copy">
+          <span class="eyebrow">Hagámoslo realidad</span>
+          <h2>¿Listo para llevar tu negocio a internet?</h2>
+          <p>Cuéntanos qué necesitas y encuentra el paquete ideal para ti.</p>
+        </div>
+        <a class="button button-primary" href="https://wa.me/529581871404?text=Hola%20AzKel%20Web%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20para%20mi%20negocio" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span class="footer-brand">AzKel <span>Web</span></span>
+      <p>© 2026 AzKel Web. Todos los derechos reservados.</p>
+      <p>Diseño web pensado para tu marca.</p>
+    </div>
+  </footer>
+</body>
+</html>
